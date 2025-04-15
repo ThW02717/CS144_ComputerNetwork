@@ -10,7 +10,7 @@ using namespace std;
 Wrap32 Wrap32::wrap( uint64_t n, Wrap32 zero_point )
 {
   // Your code here.
-  debug( "wrap( {}, {} ) called", n, zero_point.raw_value_ );
+ 
 
   return Wrap32( static_cast<uint32_t>( ( zero_point.raw_value_ + n ) % ( (uint64_t)UINT32_MAX + 1 ) ) );
 }
