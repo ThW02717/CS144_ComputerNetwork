@@ -24,7 +24,12 @@ public:
   Reader& reader() { return reassembler_.reader(); }
   const Reader& reader() const { return reassembler_.reader(); }
   const Writer& writer() const { return reassembler_.writer(); }
+  Writer& writer() { return reassembler_.writer(); }  
 
 private:
   Reassembler reassembler_;
+  bool syn_received_ = false;
+  bool fin_received_ = false;
+  Wrap32 isn_ {0};
+  uint64_t checkpoint_ = 0; 
 };

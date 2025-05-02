@@ -41,7 +41,7 @@ const Reader& reader() const { return output_.reader(); }
 
 // Access output stream writer, but const-only (can't write from outside)
 const Writer& writer() const { return output_.writer(); }
-
+Writer& writer() { return output_.writer(); } 
 private:
   ByteStream output_;
   uint64_t capacity_;
